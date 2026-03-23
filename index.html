@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Jewelry — Lab-Grown Diamond Fine Jewelry</title>
+<meta name="description" content="Azure Jewelry. Lab-grown diamond fine jewelry. Dubai · Taipei · Hong Kong.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0A0A0A;--gold:#C9A96E;--lgold:#D4B87A;--white:#F0EDE8;--dim:#B0ADA8;--dark:#111;--card:#141414}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,169,110,.15)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.nav-logo{font-size:20px;letter-spacing:8px;color:var(--gold);font-weight:400;text-decoration:none}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#EAEAEA;text-decoration:none;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:400;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-toggle{display:none;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer}
+
+.hero{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:0 24px;background:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1600&q=80') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(10,10,10,.75)}
+.hero>*{position:relative;z-index:1}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--bg));z-index:1}
+.hero h1{font-size:clamp(32px,7vw,64px);letter-spacing:clamp(4px,1.5vw,12px);color:var(--white);font-weight:300;margin-bottom:20px}
+.hero p{font-size:clamp(13px,2vw,17px);color:var(--dim);font-weight:300;max-width:560px;line-height:1.8;margin-bottom:36px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.scroll-hint{position:absolute;bottom:40px;color:var(--dim);font-size:10px;letter-spacing:3px;text-transform:uppercase;animation:pulse 2s infinite;z-index:2}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+.btn{display:inline-block;padding:14px 36px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:400;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--bg)}.btn-gold:hover{background:var(--lgold)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}.btn-outline:hover{background:var(--gold);color:var(--bg)}
+.btn-sm{padding:10px 24px;font-size:11px;letter-spacing:2px}
+
+.trust{background:var(--card);border-top:1px solid rgba(201,169,110,.1);border-bottom:1px solid rgba(201,169,110,.1);padding:28px 24px}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust-item{font-size:12px;letter-spacing:1.5px;color:var(--dim);display:flex;align-items:center;gap:8px}
+.trust-item::before{content:'◆';color:var(--gold);font-size:8px}
+
+section{padding:100px 24px;max-width:1200px;margin:0 auto}
+.s-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:8px}
+.s-title{font-size:clamp(24px,4vw,40px);letter-spacing:6px;color:var(--white);text-align:center;font-weight:300;margin-bottom:16px}
+.s-line{width:50px;height:1px;background:var(--gold);margin:0 auto 24px}
+.s-text{max-width:680px;margin:0 auto;text-align:center;font-size:14px;color:var(--dim);line-height:1.9}
+.s-cta{text-align:center;margin-top:40px}
+.s-price{text-align:center;margin-top:14px;font-size:13px;color:var(--gold);letter-spacing:1px}
+
+.coll-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
+.coll-card{background:var(--card);border:1px solid rgba(201,169,110,.1);overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
+.coll-card:hover{border-color:rgba(201,169,110,.3);transform:translateY(-4px)}
+.coll-img{width:100%;aspect-ratio:1;background:var(--dark);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px;letter-spacing:2px;background-size:cover;background-position:center;position:relative}
+.coll-img span{position:relative;z-index:1;background:rgba(10,10,10,.5);padding:6px 16px}
+.coll-info{padding:20px;text-align:center}
+.coll-name{font-size:14px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.coll-desc{font-size:12px;color:var(--dim);line-height:1.7;margin-bottom:14px}
+
+.fancy-wrap{background:var(--card);padding:100px 24px;max-width:100%;margin:0}
+.fancy-inner{max-width:1200px;margin:0 auto}
+.fancy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:50px}
+.fancy-card{padding:32px;border:1px solid rgba(201,169,110,.1);background:var(--bg);transition:border-color .3s}
+.fancy-card:hover{border-color:rgba(201,169,110,.25)}
+.fancy-dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle}
+.fancy-name{font-size:16px;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
+.fancy-desc{font-size:12px;color:var(--dim);line-height:1.8}
+
+.bespoke-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px}
+.step{text-align:center;padding:24px}
+.step-num{font-size:28px;color:var(--gold);font-weight:300;margin-bottom:8px}
+.step-name{font-size:12px;letter-spacing:2px;color:var(--white);text-transform:uppercase;margin-bottom:8px}
+.step-desc{font-size:11px;color:var(--dim);line-height:1.7}
+
+.contact-box{max-width:600px;margin:0 auto;text-align:center}
+.contact-info{margin-top:30px;font-size:13px;color:var(--dim);line-height:2.2}
+.contact-info a{color:var(--gold);text-decoration:none}
+
+footer{border-top:1px solid rgba(201,169,110,.1);padding:40px 24px;text-align:center}
+footer .f-links{margin-bottom:16px}
+footer .f-links a{color:#EAEAEA;text-decoration:none;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;margin:0 14px;transition:color .3s}
+footer .f-links a:hover{color:var(--gold)}
+footer .f-copy{font-size:11px;color:var(--dim);letter-spacing:1px}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.98);flex-direction:column;padding:20px;gap:16px}
+  .nav-links.active{display:flex}
+  .nav-toggle{display:block}
+  .coll-grid,.fancy-grid{grid-template-columns:1fr}
+  .bespoke-steps{grid-template-columns:repeat(2,1fr)}
+  .trust-inner{gap:20px}
+}
+@media(max-width:480px){
+  .bespoke-steps{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+  <a href="#" class="nav-logo">AZURE</a>
+  <div class="nav-links">
+    <a href="#collections">Collections</a>
+    <a href="#bespoke">Bespoke</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+</div>
+</nav>
+
+<!-- HERO: Adam's copy — "The Color of Possibility" -->
+<div class="hero">
+  <h1>The Color of Possibility</h1>
+  <p>A new standard in fine jewelry — where science meets craftsmanship, and rarity is redefined.</p>
+  <div class="hero-btns">
+    <a href="#collections" class="btn btn-gold">Shop Collection</a>
+    <a href="#bespoke" class="btn btn-outline">Start Your Design</a>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+<div class="trust-inner">
+  <div class="trust-item">Certified Lab-Grown Diamonds</div>
+  <div class="trust-item">Chemically Identical to Natural</div>
+  <div class="trust-item">Conflict-Free &amp; Ethical</div>
+  <div class="trust-item">Dubai-Based | Worldwide Delivery</div>
+</div>
+</div>
+
+<!-- COLLECTIONS — shown early per Adam point #5 -->
+<section id="collections">
+  <div class="s-label">Collections</div>
+  <h2 class="s-title">Our Jewelry</h2>
+  <div class="s-line"></div>
+  <p class="s-text">Discover refined pieces designed for everyday elegance and lasting significance.</p>
+  <div class="s-price">Pieces from USD XXX</div>
+  <div class="coll-grid">
+    <div class="coll-card">
+      <div class="coll-img" style="background-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80')"><span>Rings</span></div>
+      <div class="coll-info">
+        <div class="coll-name">Rings</div>
+        <div class="coll-desc">A diamond ring is a promise made visible — light held in place by intention.</div>
+        <a href="#" class="btn btn-outline btn-sm">Shop Rings</a>
+      </div>
+    </div>
+    <div class="coll-card">
+      <div class="coll-img" style="background-image:url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80')"><span>Earrings</span></div>
+      <div class="coll-info">
+        <div class="coll-name">Earrings</div>
+        <div class="coll-desc">Close to the face, a diamond captures every shift of light and every turn of the head.</div>
+        <a href="#" class="btn btn-outline btn-sm">Shop Earrings</a>
+      </div>
+    </div>
+    <div class="coll-card">
+      <div class="coll-img" style="background-image:url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80')"><span>Necklaces</span></div>
+      <div class="coll-info">
+        <div class="coll-name">Necklaces</div>
+        <div class="coll-desc">Resting against the collarbone, a pendant reflects light with quiet precision.</div>
+        <a href="#" class="btn btn-outline btn-sm">Shop Necklaces</a>
+      </div>
+    </div>
+    <div class="coll-card">
+      <div class="coll-img" style="background-image:url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80')"><span>Bracelets</span></div>
+      <div class="coll-info">
+        <div class="coll-name">Bracelets</div>
+        <div class="coll-desc">A piece that moves with you — through moments that become memories.</div>
+        <a href="#" class="btn btn-outline btn-sm">Shop Bracelets</a>
+      </div>
+    </div>
+  </div>
+  <div class="s-cta"><a href="#" class="btn btn-gold">Explore Pieces</a></div>
+</section>
+
+<!-- BRAND STORY — shortened per Adam point #1 -->
+<section id="about">
+  <div class="s-label">Our Story</div>
+  <h2 class="s-title">Azure</h2>
+  <div class="s-line"></div>
+  <p class="s-text">There is a blue beyond the sky — vast, luminous, endlessly pure. We named it Azure.</p>
+  <p class="s-text" style="margin-top:16px">We create diamonds that are chemically, optically, and physically identical to those formed deep within the Earth — yet born from human ingenuity.</p>
+  <p class="s-text" style="margin-top:16px">Crafted across Dubai, Hong Kong, and Taipei, each piece reflects a modern vision of luxury — refined, intelligent, and without limits.</p>
+</section>
+
+<!-- FANCY COLOR -->
+<div class="fancy-wrap">
+<div class="fancy-inner">
+  <div class="s-label">Rare Hues</div>
+  <h2 class="s-title">Beyond Rare</h2>
+  <div class="s-line"></div>
+  <p class="s-text">Once reserved for auctions and collectors — now reimagined. Explore vibrant, rare hues without limitation.</p>
+  <div class="fancy-grid">
+    <div class="fancy-card">
+      <div class="fancy-name"><span class="fancy-dot" style="background:#F4C2C2"></span>Pink</div>
+      <div class="fancy-desc">Soft, romantic, and exceptionally rare in nature. Our lab-grown pinks offer the same captivating blush.</div>
+    </div>
+    <div class="fancy-card">
+      <div class="fancy-name"><span class="fancy-dot" style="background:#87CEEB"></span>Blue</div>
+      <div class="fancy-desc">The depth of ocean and sky. A blue diamond commands attention with quiet authority.</div>
+    </div>
+    <div class="fancy-card">
+      <div class="fancy-name"><span class="fancy-dot" style="background:#FDFD96"></span>Yellow</div>
+      <div class="fancy-desc">Warm, vivid, and full of life. Yellow diamonds radiate optimism and bold elegance.</div>
+    </div>
+    <div class="fancy-card">
+      <div class="fancy-name"><span class="fancy-dot" style="background:#98FB98"></span>Green</div>
+      <div class="fancy-desc">Among the rarest in nature. Our greens carry the same mystique, made accessible.</div>
+    </div>
+  </div>
+  <div class="s-cta"><a href="#" class="btn btn-outline">Explore Fancy Colors</a></div>
+</div>
+</div>
+
+<!-- BESPOKE — main focus per Adam point #6 -->
+<section id="bespoke">
+  <div class="s-label">Bespoke</div>
+  <h2 class="s-title">Create Your Own Diamond Piece</h2>
+  <div class="s-line"></div>
+  <p class="s-text">Your stone. Your design. Your story. Work with our team to create a piece tailored entirely to you — from selecting the perfect diamond to crafting the final design.</p>
+  <div class="s-price">Custom pieces from USD XXX</div>
+  <div class="s-cta">
+    <a href="#contact" class="btn btn-gold">Start Your Design</a>
+    <a href="#contact" class="btn btn-outline" style="margin-left:12px">Book Private Consultation</a>
+  </div>
+  <div class="bespoke-steps">
+    <div class="step"><div class="step-num">01</div><div class="step-name">Select Your Stone</div><div class="step-desc">Choose from our curated diamonds or bring your own.</div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-name">Design</div><div class="step-desc">Share your vision — references, sketches, or ideas.</div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-name">Confirm CAD</div><div class="step-desc">Review and refine your 3D design.</div></div>
+    <div class="step"><div class="step-num">04</div><div class="step-name">Production</div><div class="step-desc">Crafted by expert artisans in 10–14 working days.</div></div>
+    <div class="step"><div class="step-num">05</div><div class="step-name">Delivery</div><div class="step-desc">Finished, quality-checked, and ready for its moment.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT — "Private Consultation" per Adam point #8 -->
+<section id="contact">
+  <div class="s-label">Get in Touch</div>
+  <h2 class="s-title">Private Consultation</h2>
+  <div class="s-line"></div>
+  <div class="contact-box">
+    <p class="s-text">Share your vision with us.</p>
+    <p class="s-text" style="margin-top:12px">Our team will guide you personally — whether you're selecting a piece or creating something entirely your own.</p>
+    <p class="s-text" style="margin-top:4px;font-size:12px;font-style:italic">By appointment only</p>
+    <div class="contact-info">
+      Dubai · Hong Kong · Taipei<br>
+      <a href="mailto:contact@azurejewelry.com">contact@azurejewelry.com</a><br>
+      WhatsApp: +852 XXXX XXXX<br>
+      WeChat: AzureJewelry
+    </div>
+    <p style="margin-top:12px;font-size:11px;color:var(--dim)">Response within 24 hours</p>
+    <div class="s-cta"><a href="#" class="btn btn-gold">Book Private Consultation</a></div>
+  </div>
+</section>
+
+<!-- FOOTER — fixed per Adam point #9 -->
+<footer>
+  <div class="f-links">
+    <a href="#collections">Collections</a>
+    <a href="#bespoke">Bespoke</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="f-copy">&copy; 2026 Azure Jewelry. All rights reserved.</div>
+</footer>
+
+<script>
+const toggle=document.querySelector('.nav-toggle'),links=document.querySelector('.nav-links');
+if(toggle){toggle.addEventListener('click',()=>{links.classList.toggle('active');toggle.textContent=links.classList.contains('active')?'✕':'☰'});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('active');toggle.textContent='☰'}))}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
+document.querySelectorAll('section,.fancy-wrap,.trust').forEach(s=>{s.style.opacity='0';s.style.transform='translateY(30px)';s.style.transition='opacity .8s ease,transform .8s ease';obs.observe(s)});
+window.addEventListener('scroll',()=>{const n=document.querySelector('nav');n.style.background=window.scrollY>50?'rgba(10,10,10,.98)':'rgba(10,10,10,.92)'});
+</script>
+</body>
+</html>
