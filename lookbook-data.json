@@ -1,28 +1,28 @@
 [
   {
+    "title": "Azure Jewelry Collection 2026 — Clean Edition",
+    "title_cn": "Azure Jewelry 2026 产品图册 — 清爽版",
+    "date": "2026-03",
+    "description": "Clean white-based design with brighter sky-azure blue. All overlaps fixed, no dark backgrounds, no duplicate images, no empty pages. 17 pages.",
+    "description_cn": "白底清爽设计，更明亮天蓝色。修复所有重叠问题，无暗色背景，无重复图片，无空白页。17 页。",
+    "filename": "Azure_Jewelry_Catalog_2026_v4.pdf",
+    "pages": 17
+  },
+  {
     "title": "Azure Jewelry Collection 2026 — Sky Blue Edition",
     "title_cn": "Azure Jewelry 2026 产品图册 — 天蓝编辑版",
     "date": "2026-03",
-    "description": "Complete redesign with luminous sky-blue Azure identity, editorial layouts, yellow diamond selection, dramatic red & green spreads, and stronger commercial effectiveness.",
-    "description_cn": "全新天蓝色品牌识别，编辑感版面，新增黄钻选品页，红绿钻戏剧性对开页，更强商业转化力。",
+    "description": "Editorial redesign with sky-blue Azure identity and editorial layouts.",
+    "description_cn": "天蓝色品牌识别，编辑感版面。",
     "filename": "Azure_Jewelry_Catalog_2026_v3.pdf",
     "pages": 18
-  },
-  {
-    "title": "Azure Jewelry Collection 2026 — Editorial Edition",
-    "title_cn": "Azure Jewelry 2026 产品图册 — 编辑精选版",
-    "date": "2026-03",
-    "description": "Editorial redesign featuring Azure blue brand signature, asymmetric layouts, white & fancy color diamonds, bespoke services, and private client information.",
-    "description_cn": "全新编辑版设计，Azure 蓝品牌标识，非对称版面，涵盖白钻、彩钻系列、专属定制服务与私人客户信息。",
-    "filename": "Azure_Jewelry_Catalog_2026_v2.pdf",
-    "pages": 19
   },
   {
     "title": "Azure Jewelry Collection 2026",
     "title_cn": "Azure Jewelry 2026 产品图册",
     "date": "2026-03",
-    "description": "Complete product catalog featuring white diamonds, fancy color diamonds (pink, blue, yellow, red, green), bespoke services, and private client information.",
-    "description_cn": "完整产品图册，涵盖白钻系列、彩钻系列（粉钻、蓝钻、黄钻、红钻、绿钻）、专属定制服务与私人客户信息。",
+    "description": "Original product catalog with white and fancy color diamonds.",
+    "description_cn": "原始产品图册。",
     "filename": "Azure_Jewelry_Catalog_2026.pdf",
     "pages": 16
   }
