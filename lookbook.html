@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lookbook — Azure Jewelry</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0A0A;
+  --gold:#C9A96E;
+  --lgold:#D4B87A;
+  --white:#F0EDE8;
+  --soft:#DBD8D3;
+  --dim:#B8B5B0;
+  --dark:#111;
+  --card:#141414;
+  --card-hover:#1A1A1A;
+  --en-serif:'Cormorant Garamond',Georgia,serif;
+  --en-sans:'Jost',sans-serif;
+  --cn:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--en-sans);font-weight:300;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+.cn{font-family:var(--cn);letter-spacing:0.02em;line-height:1.95;font-weight:400}
+
+/* -- NAV -- */
+nav{background:rgba(10,10,10,.98);border-bottom:1px solid rgba(201,169,110,.15);padding:0}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 32px}
+.nav-logo{font-family:var(--en-serif);font-size:24px;letter-spacing:10px;color:var(--gold);font-weight:400;text-decoration:none}
+.nav-back{color:var(--dim);text-decoration:none;font-size:13px;letter-spacing:1.5px;transition:color .3s;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--gold)}
+.nav-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* -- HEADER -- */
+.page-header{padding:100px 32px 60px;text-align:center;max-width:800px;margin:0 auto}
+.page-header .s-label{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.page-header h1{font-family:var(--en-serif);font-size:clamp(28px,4.5vw,46px);letter-spacing:6px;color:var(--white);font-weight:300;margin-bottom:6px}
+.page-header .s-title-cn{font-family:var(--cn);font-size:clamp(17px,2.2vw,22px);color:var(--dim);font-weight:400;letter-spacing:0.12em;margin-bottom:18px}
+.page-header .s-line{width:50px;height:1px;background:var(--gold);margin:0 auto 24px}
+.page-header p{font-size:15px;color:var(--dim);line-height:1.9;max-width:520px;margin:0 auto}
+
+/* -- CATALOG LIST -- */
+.catalog-list{max-width:800px;margin:0 auto;padding:0 32px 80px;flex:1}
+.catalog-card{background:var(--card);border:1px solid rgba(201,169,110,.1);padding:36px 40px;margin-bottom:24px;transition:border-color .3s,background .3s}
+.catalog-card:hover{border-color:rgba(201,169,110,.25);background:var(--card-hover)}
+.catalog-meta{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.catalog-date{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.catalog-pages{font-size:12px;color:var(--dim);letter-spacing:1px}
+.catalog-title{font-family:var(--en-serif);font-size:clamp(20px,3vw,28px);letter-spacing:3px;color:var(--white);font-weight:400;margin-bottom:4px}
+.catalog-title-cn{font-family:var(--cn);font-size:16px;color:var(--dim);letter-spacing:0.05em;font-weight:400;margin-bottom:16px}
+.catalog-desc{font-size:15px;color:var(--soft);line-height:1.9;margin-bottom:6px}
+.catalog-desc-cn{font-family:var(--cn);font-size:14px;color:var(--dim);line-height:1.9;letter-spacing:0.02em;font-weight:400;margin-bottom:24px}
+.catalog-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 28px;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--en-sans);font-weight:400;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--bg)}.btn-gold:hover{background:var(--lgold)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}.btn-outline:hover{background:var(--gold);color:var(--bg)}
+
+/* -- EMPTY STATE -- */
+.empty-state{text-align:center;padding:80px 32px;color:var(--dim)}
+.empty-state p{font-size:15px;line-height:1.9}
+
+/* -- FOOTER -- */
+footer{border-top:1px solid rgba(201,169,110,.1);padding:40px 32px;text-align:center;margin-top:auto}
+footer .f-copy{font-size:13px;color:var(--dim);letter-spacing:1px}
+
+/* -- RESPONSIVE -- */
+@media(max-width:768px){
+  .nav-inner{padding:16px 20px}
+  .page-header{padding:80px 24px 48px}
+  .catalog-list{padding:0 24px 60px}
+  .catalog-card{padding:28px 24px}
+  .catalog-title{letter-spacing:2px}
+}
+@media(max-width:480px){
+  .catalog-actions{flex-direction:column}
+  .catalog-actions .btn{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+  <a href="/" class="nav-logo">AZURE</a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Home
+  </a>
+</div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="s-label">Lookbook</div>
+  <h1>Product Collections</h1>
+  <div class="s-title-cn cn">产品图册</div>
+  <div class="s-line"></div>
+  <p>Browse our latest product booklets and collection catalogs.</p>
+</div>
+
+<!-- CATALOG LIST (rendered by JS from lookbook-data.json) -->
+<div class="catalog-list" id="catalog-list">
+  <div class="empty-state"><p>Loading...</p></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-copy">&copy; 2026 Azure Jewelry. All rights reserved.</div>
+</footer>
+
+<script>
+(async function(){
+  const container = document.getElementById('catalog-list');
+  try {
+    const res = await fetch('lookbook-data.json?v=' + Date.now());
+    if (!res.ok) throw new Error('Failed to load');
+    const items = await res.json();
+
+    if (!items.length) {
+      container.innerHTML = '<div class="empty-state"><p>No catalogs available yet.</p></div>';
+      return;
+    }
+
+    // Sort by date descending (newest first)
+    items.sort((a, b) => b.date.localeCompare(a.date));
+
+    container.innerHTML = items.map(item => {
+      const pdfPath = 'pdfs/' + item.filename;
+      const pagesText = item.pages ? item.pages + ' pages' : '';
+      return `
+        <div class="catalog-card">
+          <div class="catalog-meta">
+            <span class="catalog-date">${item.date}</span>
+            ${pagesText ? `<span class="catalog-pages">${pagesText}</span>` : ''}
+          </div>
+          <div class="catalog-title">${item.title}</div>
+          ${item.title_cn ? `<div class="catalog-title-cn cn">${item.title_cn}</div>` : ''}
+          <div class="catalog-desc">${item.description}</div>
+          ${item.description_cn ? `<div class="catalog-desc-cn cn">${item.description_cn}</div>` : ''}
+          <div class="catalog-actions">
+            <a href="${pdfPath}" target="_blank" class="btn btn-gold">View PDF</a>
+            <a href="${pdfPath}" download class="btn btn-outline">Download</a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    container.innerHTML = '<div class="empty-state"><p>Unable to load catalogs. Please try again later.</p></div>';
+  }
+})();
+</script>
+</body>
+</html>
